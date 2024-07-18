@@ -49,7 +49,7 @@ export const ShopContextProvider = (props) => {
 
     const fetchAvailableMoney = async () => {
         const res = await axios.get(
-            `http://localhost:3000/user/available-money/${localStorage.getItem(
+            `https://ecommapp-ugqj.onrender.com/user/available-money/${localStorage.getItem(
                 "userID"
             )}`,
             { headers }
@@ -58,7 +58,7 @@ export const ShopContextProvider = (props) => {
     };
     const fetchPurchasedItems = async () => {
         const res = await axios.get(
-            `http://localhost:3000/products/purchased-items/${localStorage.getItem(
+            `https://ecommapp-ugqj.onrender.com/products/purchased-items/${localStorage.getItem(
                 "userID"
             )}`,
             { headers }
@@ -112,7 +112,7 @@ export const ShopContextProvider = (props) => {
         const body = {customerID: localStorage.getItem("userID"), cartItems}
 
         try {
-            await axios.post("http://localhost:3000/products/checkout", body, {headers});
+            await axios.post("https://ecommapp-ugqj.onrender.com/products/checkout", body, {headers});
            setCartItems({})
             fetchPurchasedItems()
             fetchAvailableMoney()

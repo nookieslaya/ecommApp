@@ -10,7 +10,7 @@ export const useGetProducts = () => {
     const {isAuthenticated} = useContext<IShopContext>(ShopContext)
     const fetchProducts = async () => {
         try {
-            const fetchedProducts = await axios.get('http://localhost:3000/products', {headers})
+            const fetchedProducts = await axios.get('https://ecommapp-ugqj.onrender.com/products', {headers})
             setProducts(fetchedProducts.data.products)
         } catch (err) {
             alert("somethin went wrong")

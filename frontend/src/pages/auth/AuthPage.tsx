@@ -43,7 +43,7 @@ const Register = () => {
         e.preventDefault()
 
         try {
-            await axios.post('http://localhost:3001/user/register', {username, password})
+            await axios.post('https://ecommapp-ugqj.onrender.com/user/register', {username, password})
             toast.success('Register succesfully',);
         } catch (e) {
             if (e.response.data.type === UserErrors.USERNAME_ALREADY_EXIST) {
@@ -158,7 +158,7 @@ const Login = () => {
         e.preventDefault()
 
         try {
-            const result = await axios.post('http://localhost:3001/user/login', {username, password})
+            const result = await axios.post('https://ecommapp-ugqj.onrender.com/user/login', {username, password})
             toast.success('Login succesfully',);
             setCookies('access_token', result.data.token)
 
